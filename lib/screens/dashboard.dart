@@ -2,6 +2,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:task_manager/widgets/chart.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -44,9 +45,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
               const SizedBox(height: 16),
               GridView.count(
                 crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
                 shrinkWrap: true,
+                padding: EdgeInsets.zero,
+                childAspectRatio: 1.5,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
                   buildSummaryCard('24', 'In Progress', Colors.blue),
@@ -62,7 +65,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               SizedBox(height: 16),
               Container(
-                height: 200,
+                height: 250,
+                width: 400,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
@@ -74,9 +78,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ],
                 ),
-                child: Center(
-                    child:
-                        Text('Chart Placeholder')), // Sử dụng package chart sau
+                child: Center(child: Chart()), // Sử dụng package chart sau
               ),
               SizedBox(height: 16),
               Row(
@@ -97,6 +99,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   Widget buildSummaryCard(String number, String title, Color color) {
     return Container(
+      height: 50,
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
@@ -110,7 +113,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
             style: TextStyle(
                 fontSize: 28, fontWeight: FontWeight.bold, color: color),
           ),
-          Spacer(),
           Text(
             title,
             style: TextStyle(fontSize: 16, color: color),
