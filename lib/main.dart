@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/screens/dashboard.dart';
+import 'package:task_manager/screens/task.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,6 +11,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: DashboardScreen());
+    return const MaterialApp(home: TaskListScreen());
   }
 }
