@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/screens/dashboard.dart';
+import 'package:task_manager/screens/new_task.dart';
 import 'package:task_manager/screens/task_detail.dart';
 
 void main() {
@@ -11,6 +11,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: TaskDetailScreen());
+    return const MaterialApp(home: NewTaskScreen());
   }
 }

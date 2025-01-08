@@ -1,9 +1,9 @@
 // ignore_for_file: unused_element, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/widgets/calendar_dates.dart';
 import 'package:task_manager/widgets/task_container.dart';
+import 'package:task_manager/widgets/back_button.dart';
 
 class TaskDetailScreen extends StatefulWidget {
   const TaskDetailScreen({super.key});
@@ -55,15 +55,7 @@ class _TaskDetailScreenState extends State<TaskDetailScreen> {
           ),
           child: Column(
             children: <Widget>[
-              Align(
-                alignment: Alignment.centerLeft,
-                child: IconButton(
-                  icon: Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
+              MyBackButton(),
               SizedBox(height: 30.0),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
