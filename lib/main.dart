@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/screens/new_task.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:task_manager/services/notifications_service.dart';
 import 'firebase_options.dart';
 import 'package:task_manager/screens/task_detail.dart';
 
@@ -9,6 +10,8 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await NotificationService().init();
   runApp(const MainApp());
 }
 
