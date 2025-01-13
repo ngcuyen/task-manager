@@ -15,11 +15,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.yellow[50],
       appBar: AppBar(
         title: const Text(
           'Dashboard',
           style: TextStyle(fontSize: 35),
         ),
+        backgroundColor: Colors.yellow[50],
         actions: [
           IconButton(
             icon: const Icon(
@@ -52,10 +54,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 childAspectRatio: 1.5,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  buildSummaryCard('24', 'In Progress', Colors.blue),
-                  buildSummaryCard('56', 'In Review', Colors.purple),
-                  buildSummaryCard('16', 'On Hold', Colors.orange),
-                  buildSummaryCard('45', 'Completed', Colors.green),
+                  buildSummaryCard('24', 'TO DO', Colors.blue),
+                  buildSummaryCard('56', 'IN PROGRESS', Colors.purple),
+                  buildSummaryCard('16', 'TEST', Colors.orange),
+                  buildSummaryCard('45', 'DONE', Colors.green),
                 ],
               ),
               SizedBox(height: 16),

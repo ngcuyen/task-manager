@@ -19,7 +19,7 @@ class TopContainer extends StatelessWidget {
       padding:
           padding != null ? padding : EdgeInsets.symmetric(horizontal: 20.0),
       decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: const Color.fromARGB(255, 255, 242, 126),
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(40.0),
             bottomLeft: Radius.circular(40.0),

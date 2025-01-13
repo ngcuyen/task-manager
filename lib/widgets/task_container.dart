@@ -19,6 +19,22 @@ class TaskContainer extends StatelessWidget {
     this.status,
   });
 
+  // Hàm trả về màu sắc dựa trên status
+  Color getStatusColor(String? status) {
+    switch (status) {
+      case 'TO DO':
+        return Colors.blue; // Màu vàng
+      case 'IN PROGRESS':
+        return Colors.orange; // Màu cam
+      case 'TEST':
+        return Colors.purple; // Màu tím
+      case 'DONE':
+        return Colors.green; // Màu xanh lá
+      default:
+        return Colors.grey; // Màu xám cho trạng thái không xác định
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,7 +68,8 @@ class TaskContainer extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent, // Nền trạng thái
+                    color:
+                        getStatusColor(status), // Gọi hàm để lấy màu trạng thái
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   child: Text(
@@ -60,7 +77,7 @@ class TaskContainer extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white, // Màu chữ
+                      color: Colors.white, // Màu chữ luôn là trắng
                     ),
                   ),
                 ),

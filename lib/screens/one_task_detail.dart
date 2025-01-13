@@ -19,13 +19,7 @@ class _OneTaskScreenState extends State<OneTaskScreen> {
   late TextEditingController _startTimeController;
   late TextEditingController _endTimeController;
   String? _selectedStatus;
-  final List<String> _statusOptions = [
-    'TO DO',
-    'IN PROGRESS',
-    'TEST',
-    'DONE',
-    "pending"
-  ];
+  final List<String> _statusOptions = ['TO DO', 'IN PROGRESS', 'TEST', 'DONE'];
 
   @override
   void initState() {
