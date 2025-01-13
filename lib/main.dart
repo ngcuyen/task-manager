@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:task_manager/screens/login_screen.dart';
 import 'package:task_manager/screens/new_task.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:task_manager/screens/signup_screen.dart';
 import 'package:task_manager/services/notifications_service.dart';
 import 'firebase_options.dart';
 import 'package:task_manager/screens/task_detail.dart';
@@ -20,11 +23,16 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Task Manager',
-      
-      home: const NewTaskScreen(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: FirebaseAuth.instance.currentUser == null
+          ? const LoginScreen()
+          : const NewTaskScreen(),
+          
     );
   }
 }
