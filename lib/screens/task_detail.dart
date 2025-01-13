@@ -268,41 +268,41 @@ class _TaskDetailScreenState extends State<TaskDetailScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         // Cột hiển thị theo giờ
-                        Expanded(
-                          flex: 1,
-                          child: isLoading
-                              ? Center(
-                                  child: CircularProgressIndicator(),
-                                )
-                              : ListView.builder(
-                                  itemCount:
-                                      times.length, // times là danh sách giờ
-                                  shrinkWrap: true,
-                                  physics: NeverScrollableScrollPhysics(),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    final time =
-                                        times[index]; // Lấy giờ từ danh sách
-                                    return Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 15.0),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            time, // Hiển thị giờ (AM/PM)
-                                            style: TextStyle(
-                                              fontSize: 16.0,
-                                              color: Colors.black54,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  },
-                                ),
-                        ),
+                        // Expanded(
+                        //   flex: 1,
+                        //   child: isLoading
+                        //       ? Center(
+                        //           child: CircularProgressIndicator(),
+                        //         )
+                        //       : ListView.builder(
+                        //           itemCount:
+                        //               times.length, // times là danh sách giờ
+                        //           shrinkWrap: true,
+                        //           physics: NeverScrollableScrollPhysics(),
+                        //           itemBuilder:
+                        //               (BuildContext context, int index) {
+                        //             final time =
+                        //                 times[index]; // Lấy giờ từ danh sách
+                        //             return Padding(
+                        //               padding: const EdgeInsets.symmetric(
+                        //                   vertical: 15.0),
+                        //               child: Row(
+                        //                 crossAxisAlignment:
+                        //                     CrossAxisAlignment.start,
+                        //                 children: [
+                        //                   Text(
+                        //                     time, // Hiển thị giờ (AM/PM)
+                        //                     style: TextStyle(
+                        //                       fontSize: 16.0,
+                        //                       color: Colors.black54,
+                        //                     ),
+                        //                   ),
+                        //                 ],
+                        //               ),
+                        //             );
+                        //           },
+                        //         ),
+                        // ),
                         SizedBox(width: 20),
                         // Cột hiển thị tất cả các tasks trong ngày hôm nay
                         Expanded(
